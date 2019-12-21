@@ -2,10 +2,8 @@
 title: |
   | Reproducible Research: 
   | Activity Data Report and Analysis
-author: "Justin Abbott"
-date: |
-  | 2019-12-21
-  | \n
+author: Justin Abbott
+date: 2019-12-21
 output: 
   html_document:
     keep_md: true
@@ -232,6 +230,7 @@ day_diff <- impute_data %>%
 
 ggplot(day_diff, aes(interval, mean_steps, color = day_type)) +
     geom_line() +
+    facet_grid(day_type ~ .) +
     labs(title = "\n Weekday vs Weekend Average Activity By Interval \n") +
     theme(plot.title = element_text(hjust = 0.5))
 ```
